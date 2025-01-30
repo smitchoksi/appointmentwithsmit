@@ -1,11 +1,14 @@
 import validator from 'validator'
-import bycrypt from 'bcrypt'
 import userModel from '../models/userModel.js'
 import jwt from 'jsonwebtoken'
 import { v2 as cloudinary } from 'cloudinary'
 import doctorModel from '../models/doctorModel.js'
 import appointmentModel from '../models/appointmentModel.js'
 import Razorpay from 'razorpay';
+import bcrypt from 'bcryptjs'
+
+
+const bcrypt = require('bcryptjs');
 
 
 // api to register user
@@ -29,8 +32,8 @@ const registerUser = async (req, res) => {
         }
 
         // hashing user password
-        const salt = await bycrypt.genSalt(10)
-        const hashedPassword = await bycrypt.hash(password, salt)
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(password, salt)
 
         const userData = {
             name,
