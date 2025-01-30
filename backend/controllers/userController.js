@@ -5,7 +5,6 @@ import { v2 as cloudinary } from 'cloudinary'
 import doctorModel from '../models/doctorModel.js'
 import appointmentModel from '../models/appointmentModel.js'
 import Razorpay from 'razorpay';
-import bcrypt from 'bcryptjs'
 
 
 const bcrypt = require('bcryptjs');
